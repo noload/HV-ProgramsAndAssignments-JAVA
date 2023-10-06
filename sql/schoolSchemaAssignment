@@ -1,0 +1,35 @@
+-- 1. Question: For each class, find the student(s) who scored the highest in Science.
+select s.student_name,s1.score from students s join scores s1 on s.student_id=s1.student_id where score=(select max(score) from scores where subject="Science");
+
+-- 2. Question: List the names of students who scored lower in Math than their average Science score.
+select s.student_name,s1.score from students s join scores s1 on s.student_id=s1.student_id where s1.subject="Math" and score<(select avg(score) from scores where subject="Science");
+
+
+-- 3. Question: Display the class names with the highest number of students who scored above 80 in any subject.
+select c.class_name,count(s.student_id) as no_of_student from classes c join students s on c.class_id=s.class_id inner join scores s1 on s.student_id=s1.student_id where s1.score > 80 group by class_name ; 
+
+-- 4. Question: Find the students who scored the highest in each subject.
+select c.class_name, max(score) from classes c join students s on c.class_id=s.class_id inner join scores s1 on s.student_id=s1.student_id group by class_name ; 
+
+-- 5. Question: List the names of students who scored higher than the average of any student's score in their own class. 
+SELECT S1.student_id,s.student_name
+FROM scores S1 join students s on S1.student_id=s.student_id
+WHERE score > (SELECT AVG(score) FROM scores S2 WHERE S1.student_id = S2.student_id);
+
+
+
+-- 6. Question: Find the class(es) where the students average age is above the average age of all students.
+select c.class_name, avg(age) as avg1 , count(s.student_id) from classes c join students s on c.class_id=s.class_id inner join scores s1 on s.student_id=s1.student_id group by class_name; 
+
+
+-- 7. Question: Display the student names and their total scores, ordered by the total score in descending order.
+select s.student_name,sum(score) as totalScore from students s join scores s1 on s.student_id=s1.student_id group by s1.student_id order by totalScore desc;
+
+-- 8. Question: Find the student(s) who scored the highest in the class with the lowest average score.
+
+-- 9. Question: List the names of students who scored the same as Alice in at least one subject.
+select s.student_name from students s join scores s1 on s.student_id=s1.student_id where score in (select score from scores where student_id=1) and s1.student_id <> 1;
+
+
+-- 10. Question: Display the class names along with the number of students who scored below the average score in their class.
+select c.class_name,count(s.student_id) as no_of_student from classes c join students s on c.class_id=s.class_id inner join scores s1 on s.student_id=s1.student_id where s1.score < 17.5000 group by class_name ; 
