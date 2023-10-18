@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: grey;
+    color: white;
+    padding: 7px;
+    
+}
+li{
+   
+    list-style: none;
+    margin: 9px 21px;
+    font-size: 4vh;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+
+}
+.navicons ul li{
+    position: relative;
+    right: 0;
+    background-color: rgb(98, 97, 97);
+    padding: 5px 5px;
+   
+}
+.navtab{
+    margin-left: 163px;
+}
+.navicons ul li a{
+    color:white;
+    font-size: larger;
+    display: inline-block;
+}
+.bg-img{
+    background-image: url(https://media.istockphoto.com/id/1217760999/photo/grilled-chicken-breasts-with-thyme-garlic-and-lemon-slices-on-a-grill-pan-close-up.webp?b=1&s=170667a&w=0&k=20&c=2uTHT-q58TeWiSJRtRYuky0EgyFOmBKe6-Fq79q91p8=);
+    width: 100%;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-position: center;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   margin-top: 2px;
+}
+.bg-img h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+}
+.middle{
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 15px;
+}
+.address{
+    display: flex;
+    justify-content: space-evenly;
+}
+.address_card{
+   
+    /* border: 2px solid black; */
+    height: 25vh;
+    width: 30%;
+    background-color: lightgray;
+}
+.address ul li{
+    list-style: disc;
+    margin: 3px;
+}
+.address ul{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
