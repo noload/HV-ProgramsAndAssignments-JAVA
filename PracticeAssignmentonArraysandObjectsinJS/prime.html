@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question 4. Prime Numbers Count</h1>
+    <script>
+        function isPrime(num){
+            
+            let prime=true
+            //extra condition to meet given output
+            if(num==1){
+                return prime=false
+            }
+            for(let i=2;i<num;i++){
+                if(num%i==0){
+                    prime=false
+                }
+            }
+            return prime
+        }
+
+     let range=20;
+     let count=0;
+     for(let i=1;i<=20;i++){
+        
+        if(isPrime(i)){
+            console.log(i)
+            count++
+        }
+     }
+     console.log("Number of prime element between 1 to",range," is ",count)
+
+    </script>
+</body>
+</html>
